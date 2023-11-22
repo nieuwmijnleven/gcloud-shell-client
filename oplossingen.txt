@@ -1,0 +1,6 @@
+✓java command line opties instellen
+(app/build.gradle)
+apply plugin: 'application'                    applicationDefaultJvmArgs = ["-DGOOGLE_APPLICATION_CREDENTIALS=/home/termux/gcloud-client/credentials.json"]
+
+✓grpc -> rest
+CloudShellServiceSettings cloudShellServiceSettings = CloudShellServiceSettings.newHttpJsonBuilder().build();

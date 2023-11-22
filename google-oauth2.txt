@@ -1,0 +1,31 @@
+✓google oauth2 credentials maken en downloaden
+✓authorization code vereisen
+(request) https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/cloud-platform&access_type=offline&redirect_uri=http://localhost&client_id=414910548804-3al1hn9o5hsm6bu8lequkrcunerbas32.apps.googleusercontent.com&response_type=code
+(return) http://localhost/?code=4/0AfJohXk4NjzA9NyvlOZbgTTK-LJ4z2CGbc88VxooT8P33FzT1xmo-h4gnIwTsFJ33iV9Tw&scope=https://www.googleapis.com/auth/cloud-platform
+✓access_token, reflesh_token vereisen
+(request) curl -X POST -H "Content-Type: application/json" -d @oauth2_token_request_data.json https://accounts.google.com/o/oauth2/token
+(file: oauth2_token_request_data.json) 
+{
+"code":"4/0AfJohXk4NjzA9NyvlOZbgTTK-LJ4z2CGbc88VxooT8P33FzT1xmo-h4gnIwTsFJ33iV9Tw",
+"client_id":"414910548804-3al1hn9o5hsm6bu8lequkrcunerbas32.apps.googleusercontent.com",
+"client_secret":"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",
+"redirect_uri":"http://localhost",
+"grant_type":"authorization_code"
+}
+(response)
+{
+  "access_token": "ya29.a0AfB_byCldETjLQecdbE949GyAKY0RNqpbWRNEFktIV5296ukR5KuSxbNXTmgsbcUXe22_uCQKMwOIHXegYHs3ZZo4-7w_1HI0_r-P0MtAJAatGYjKcBINrT3biMMC62bfX-e3xDqn-4U4aFovKOrQlugjwmg2X5Hz9gYaCgYKAQcSARASFQHGX2MirvaqjNVNm8L8jpKNBkNKAw0171",
+  "expires_in": 3599,
+  "refresh_token": "1//09UtGVmufLJVgCgYIARAAGAkSNwF-L9IrIpXKbD4l7fG4sSzEl2-iIn5pQvhYP7ic-8QaDlmdIRNsunKK0hd7aevOiF8qtyOhdHk",
+  "scope": "https://www.googleapis.com/auth/cloud-platform",
+  "token_type": "Bearer"
+}
+✓ credentials.json maken voor api client
+(de onderstaande 4 artikelen zijn noodzaakelijk)
+type(authorized_user), client_id, client_secret, refresh_token
+{
+  "client_id":"414910548804-3al1hn9o5hsm6bu8lequkrcunerbas32.apps.googleusercontent.com",
+  "type":"authorized_user",
+  "client_secret":"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",
+  "refresh_token":"1//09UtGVmufLJVgCgYIARAAGAkSNwF-L9IrIpXKbD4l7fG4sSzEl2-iIn5pQvhYP7ic-8QaDlmdIRNsunKK0hd7aevOiF8qtyOhdHk",
+}
