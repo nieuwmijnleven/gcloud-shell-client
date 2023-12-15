@@ -15,6 +15,7 @@ import com.google.cloud.shell.v1.StartEnvironmentResponse;
 import com.google.cloud.shell.v1.Environment;
 
 import java.util.List;
+import java.util.Arrays;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -58,7 +59,7 @@ public class App {
           StartEnvironmentRequest.newBuilder()
               .setName("users/me/environments/default")
               .setAccessToken(getAccessToken())
-              .addAllPublicKeys(List.of("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZN0WXrusm7GaovfTbouk47l0yzCcmzy7Y13gsAsPhNNEoLcjIgf1t9EM7xoSpnWJYsTPtvAL/8mL9mdHCPmHc+XO5kwJsTema0Wt6DO0V5YHL1r5okdmLmn21IJd/d5H6o5NEjDhg4NxY+5Sjnai2npwRJnmuY+i/DfapEwhn5iW8xBkRCDCS01Qi+DQ6hpOkUyGyoAy3YBU0C5NtcYyn5RBvHiJzvzUMuk27zB7/fG8RJbz1Df/zJlONHIKCvJYsEzcfMSjxA9xEJ1DiR8VpGQ9IpMMXymyWDNPDJnS72bzNeeg8sh8AgwdASRTR65U/xQ0l4N0thDJVgYIbQhsbeB9Wm4nyeo8OY0jfCseF5u249wSUKWlWSJ8OiddxPwHQdFzCN/rPvAPVo97EBKt0WD2Kr3PJuQ8C/rO2DyL4zfh/peCi2cWLz3eGktnExBlLHJ29L7wKAl+laAWQYE7AZWNIw+u7H3jEy9DiBLzojw4GBeGsjMFAXagpXz42BeU="))
+              .addAllPublicKeys(Arrays.asList("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZN0WXrusm7GaovfTbouk47l0yzCcmzy7Y13gsAsPhNNEoLcjIgf1t9EM7xoSpnWJYsTPtvAL/8mL9mdHCPmHc+XO5kwJsTema0Wt6DO0V5YHL1r5okdmLmn21IJd/d5H6o5NEjDhg4NxY+5Sjnai2npwRJnmuY+i/DfapEwhn5iW8xBkRCDCS01Qi+DQ6hpOkUyGyoAy3YBU0C5NtcYyn5RBvHiJzvzUMuk27zB7/fG8RJbz1Df/zJlONHIKCvJYsEzcfMSjxA9xEJ1DiR8VpGQ9IpMMXymyWDNPDJnS72bzNeeg8sh8AgwdASRTR65U/xQ0l4N0thDJVgYIbQhsbeB9Wm4nyeo8OY0jfCseF5u249wSUKWlWSJ8OiddxPwHQdFzCN/rPvAPVo97EBKt0WD2Kr3PJuQ8C/rO2DyL4zfh/peCi2cWLz3eGktnExBlLHJ29L7wKAl+laAWQYE7AZWNIw+u7H3jEy9DiBLzojw4GBeGsjMFAXagpXz42BeU="))
               .build();
       StartEnvironmentResponse response =
           cloudShellServiceClient.startEnvironmentAsync(request).get();

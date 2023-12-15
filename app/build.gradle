@@ -40,6 +40,17 @@ application {
     mainClass = 'gcloud.client.App'
 }
 
+compileJava {
+    options.release = 8
+}
+
+/*compileOptions {
+
+        //Like these 
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }*/
+
 tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
